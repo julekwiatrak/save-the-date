@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Save the Date</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="game-shell" aria-live="polite">
+      <section class="screen screen-start is-active" data-screen="start">
+        <div class="pixel-panel title-panel">
+          <div class="intro-art" aria-hidden="true">
+            <canvas id="introCanvas" width="320" height="180"></canvas>
+          </div>
+          <div class="language-selector" aria-label="Language">
+            <button class="lang-button is-active" type="button" data-lang="en" aria-label="English" aria-pressed="true">🇬🇧</button>
+            <button class="lang-button" type="button" data-lang="pl" aria-label="Polski" aria-pressed="false">🇵🇱</button>
+            <button class="lang-button" type="button" data-lang="zh" aria-label="Hong Kong Cantonese" aria-pressed="false">🇭🇰</button>
+          </div>
+          <button class="info-button" type="button" data-action="info" aria-label="About this joke" hidden>i</button>
+          <h1>SAVE THE DATE</h1>
+          <div class="title-translations" aria-label="Translations">
+            <p>URATUJ DAKTYLA</p>
+            <p lang="zh-Hant">救救椰棗</p>
+          </div>
+          <div class="menu-actions">
+            <button class="pixel-button primary" type="button" data-action="play" data-i18n="play">PLAY</button>
+            <button class="pixel-button" type="button" data-action="skip" data-i18n="skip">SKIP GAME</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="info-modal" data-info-modal hidden>
+        <div class="info-card" role="dialog" aria-modal="true" aria-label="About Save the Date">
+          <button class="info-close" type="button" data-action="close-info" aria-label="Close">×</button>
+          <div data-info-lang="pl" hidden>
+            <p>"Save the date", czyli "zapamiętaj datę", to informacja wysyłana do gości imprezy przed oficjalnymi zaproszeniami.</p>
+            <p>"Save the date" można jednak również przetłumaczyć jako "uratuj daktyla".</p>
+          </div>
+          <div data-info-lang="zh" lang="zh-Hant-HK" hidden>
+            <p>"Save the date" 係指喺正式邀請之前向嘉賓發送嘅通知。</p>
+            <p>不過，“Save the date” 亦可以翻譯成「救救椰棗」（一種甜口，主要產自中東的棕櫚科植物果實）。</p>
+            <p>只要你成功接住粒椰棗，就可以知道我地幾時結婚啦！</p>
+          </div>
+        </div>
+      </div>
+
+      <section class="screen screen-game" data-screen="game">
+        <div class="hud">
+          <span data-i18n="catch">Catch the date</span>
+          <span class="hud-controls"><span data-i18n="move">Move</span>: <kbd>←</kbd> <kbd>→</kbd> <span data-i18n="orDrag">or drag</span></span>
+        </div>
+        <canvas id="gameCanvas" width="320" height="520" aria-label="Pixel art game. Move the bride and groom left or right to catch the falling date."></canvas>
+        <div class="touch-controls" aria-label="Touch controls">
+          <button class="pixel-button icon-button" type="button" data-control="left" aria-label="Move left">◀</button>
+          <button class="pixel-button icon-button" type="button" data-control="right" aria-label="Move right">▶</button>
+        </div>
+      </section>
+
+      <section class="screen screen-success" data-screen="success">
+        <div class="pixel-panel result-panel">
+          <div class="result-badge" data-i18n="saved">YOU HAVE SAVED THE DATE</div>
+          <div class="success-art" aria-hidden="true">
+            <canvas id="successCanvas" width="360" height="180"></canvas>
+          </div>
+          <h2 data-i18n="wedding">Cannis & Juliusz’s Wedding</h2>
+          <p class="date-line">July 1st, 2027</p>
+          <a class="map-link" href="https://maps.app.goo.gl/zoNjyDqaDx6CM4Sg6" target="_blank" rel="noopener noreferrer" data-i18n="place">Szklarnia in Grodzisk Mazowiecki, near Warsaw, Poland</a>
+          <button class="pixel-button" type="button" data-action="home" data-i18n="again">PLAY AGAIN</button>
+        </div>
+      </section>
+
+      <section class="screen screen-fail" data-screen="fail">
+        <div class="pixel-panel result-panel">
+          <div class="result-badge danger" data-i18n="failed">MISSION FAILED</div>
+          <p data-i18n="failText">The date met the floor. A tragic but extremely preventable outcome.</p>
+          <div class="menu-actions">
+            <button class="pixel-button primary" type="button" data-action="home" data-i18n="again">PLAY AGAIN</button>
+            <button class="pixel-button" type="button" data-action="skip" data-i18n="skip">SKIP GAME</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js?v=20260630-1543"></script>
+  </body>
+</html>
