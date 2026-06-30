@@ -345,8 +345,15 @@ kbd {
 }
 
 .near-line,
-.map-link {
+.map-link,
+.more-info {
   color: #f5eab5;
+}
+
+.more-info {
+  max-width: 42ch;
+  justify-self: center;
+  line-height: 1.45;
 }
 
 .map-link {
@@ -358,9 +365,24 @@ kbd {
 
 .calendar-link {
   justify-self: center;
-  display: inline-grid;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   place-items: center;
+  color: var(--ink);
+  background: var(--mint);
   text-decoration: none;
+}
+
+.calendar-link::before {
+  content: "▣";
+  font-size: 1.15em;
+  line-height: 1;
+}
+
+.calendar-link:hover,
+.calendar-link:focus-visible {
+  background: #7ee0aa;
 }
 
 @media (max-width: 520px) {
