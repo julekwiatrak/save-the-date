@@ -102,6 +102,15 @@ h1 {
   text-shadow: 4px 4px 0 var(--coral), 8px 8px 0 var(--plum);
 }
 
+.title-row {
+  display: block;
+  width: 100%;
+}
+
+.title-date {
+  white-space: nowrap;
+}
+
 h2 {
   color: var(--gold);
   font-size: clamp(1.35rem, 5vw, 2.4rem);
@@ -151,11 +160,12 @@ h2 {
 }
 
 .info-button {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 36px;
-  height: 36px;
+  display: inline-grid;
+  place-items: center;
+  vertical-align: top;
+  width: 28px;
+  height: 28px;
+  margin: 0 0 0 2px;
   padding: 0;
   color: var(--ink);
   background: var(--paper);
@@ -164,9 +174,10 @@ h2 {
   box-shadow: 0 3px 0 var(--shadow);
   cursor: pointer;
   font-family: Georgia, serif;
-  font-size: 1.35rem;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1;
+  text-shadow: none;
 }
 
 .info-button:hover,
