@@ -356,6 +356,13 @@ kbd {
   text-underline-offset: 4px;
 }
 
+.calendar-link {
+  justify-self: center;
+  display: inline-grid;
+  place-items: center;
+  text-decoration: none;
+}
+
 @media (max-width: 520px) {
   .game-shell {
     padding: 10px;
